@@ -1,0 +1,39 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.back-btn {
+  font-family: "Poppins";
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  background-color: #fff;
+  border: 1px solid #555;
+  color: #555;
+  font-size: 1.2rem;
+  margin: 1.8rem 0;
+  transition: all 0.5s ease-in;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.back-btn .icon {
+  margin-top: 0.3rem;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  background-color: #111;
+  border: 1px solid #999;
+  color: #fff;
+}

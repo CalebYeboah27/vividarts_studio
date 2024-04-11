@@ -1,0 +1,13 @@
+.venv
+terraform/terraform.exe
+terraform/*.pub
+node_modules
+mvenv
+layer
+packages/
+myPackages
+image-resizer-lambda/node_modules
+function*
+terraform/*.tfstate*
+terraform/*.terraform*
+

@@ -1,0 +1,249 @@
+<!-- what does this file contain -->
+
+<!-- The home page contains the title of the website, a short description of the website and a link to the upload page. -->
+<!-- The upload page contains a form that allows users to upload images to the website. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>VividArt Studios - Photography</title>
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta content="" name="keywords" />
+    <meta
+      content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+    <link
+      href="{{ url_for('static', filename='css/plugins.css') }}"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- style end -->
+    <!-- google fonts start -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CRacing+Sans+One"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- google fonts end -->
+  </head>
+  <body>
+    <!-- preloader start -->
+    <div class="preloader-bg"></div>
+    <div id="preloader">
+      <div id="preloader-status">
+        <div class="preloader-position loader">
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <a class="logo element-color-switch">
+      <div class="logo-img fadeIn-element"></div>
+    </a>
+    <!-- navigation trigger start -->
+    <div
+      class="menu-trigger navigation-icon fadeIn-element"
+      id="menu-mobile-btn"
+    >
+      <button
+        class="lines-button minus menu-toggle"
+        id="menu-mobile-caller"
+        type="button"
+      >
+        <span class="lines inverse"></span>
+      </button>
+    </div>
+    <!-- navigation trigger end -->
+    <!-- navigation start -->
+    <div id="ui-layer">
+      <div id="menu-wrapper">
+        <div id="menu-mobile">
+          <div class="menu-nav-wrapper">
+            <nav class="menu-nav">
+              <ul>
+                <li>
+                  <a class="menu-state active" href="#home">Home</a>
+                </li>
+                <li>
+                  <a class="menu-state" href="#app">Application</a>
+                </li>
+                <li class="credits" style="padding-top: 50px">
+                  <a href="https://azubiafrica.org" style="color: blue"
+                    >Azubi Africa Cloud Engineering</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- navigation end -->
+
+    <div id="fullpage">
+      <!-- section home start -->
+      <div class="section overlay overlay-dark-60" id="section0">
+        <!-- vertical lines start -->
+        <div class="vertical-lines-wrapper fadeIn-element">
+          <div class="vertical-lines"></div>
+        </div>
+        <!-- vertical lines end -->
+        <!-- section title start -->
+        <div class="section-title section-title-home fadeIn-element">
+          <div class="section-title-heading section-title-heading-home">
+            VividArt Studios
+          </div>
+        </div>
+        <!-- section title end -->
+
+        <div class="section-bg-home"></div>
+        <div class="bottom-credits fadeIn-element">
+          <a class="link-underline-home" href="#">VividArt Studios</a> &copy;
+          <!-- current year -->
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          All Rights Reserved.
+        </div>
+        <div class="social-icons-wrapper fadeIn-element">
+          <p>Created by team:</p>
+        </div>
+
+        <div class="scroll-indicator fadeIn-element">
+          <div class="scroll-indicator-wrapper">
+            <div class="scroll-line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- section home end -->
+
+      <!-- section upload start -->
+      <div class="section" id="app">
+        <div class="section-title section-title-left">
+          <div class="section-title-heading">Editor</div>
+        </div>
+        <!-- container start -->
+        <div class="container-fluid sections">
+          <!-- row start -->
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-sm-push-6 nopadding">
+              <div
+                class="contact-container element-color-switch-reverse contact-reset"
+              >
+                <div class="center-container">
+                  <div class="center-block">
+                    <div class="contact-content contact-content-light">
+                      <div class="contact-content-inner">
+                        <h2
+                          class="section-subheading section-subheading-about section-subheading-dark"
+                        >
+                          <span>Upload and Transform</span>
+                        </h2>
+                        <div class="inner-divider-half"></div>
+                        <h2
+                          class="section-heading section-heading-about section-heading-dark"
+                        >
+                          Capture the Vivid Moments.
+                        </h2>
+                        <div class="inner-divider"></div>
+                        <div class="contact-txt contact-txt-dark">
+                          <p>
+                            Ready to embark on a visual journey? Use our
+                            intuitive upload section to submit your photos, and
+                            let our new processing tool work its magic. Unleash
+                            the full potential of your images with dynamic
+                            filters and collaborative features, curated to bring
+                            your artistic vision to life.
+                          </p>
+                        </div>
+                        <div class="inner-divider"></div>
+                        <div class="contact-txt contact-txt-dark">
+                          <div class="inner-divider"></div>
+                          <div class="contact-modal-launcher-wrapper">
+                            <div class="the-button contact-modal-launcher">
+                              Click Here
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-sm-pull-6 nopadding">
+              <div class="overlay overlay-inverse-dark-35">
+                <div class="contact-bg-wrapper">
+                  <div class="contact-bg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal">
+          <div class="container">
+            <div class="center-container-contact-modal">
+              <div class="center-block-contact-modal">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="contact-content-inner-modal">
+                      <div id="contact-form">
+                        <form
+                          enctype="multipart/form-data"
+                        >
+                          <input
+                            type="file"                            
+                            name="photo"
+                            id="file-input"
+                            accept="image/*"
+                            required
+                          />
+                          <div class="contact-form-submit-wrapper">
+                            <button
+                              class="the-button the-button-light"
+                              id="btn"
+                              type="submit"
+                            >
+                              <span>Submit</span>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+
+                      <div class="inner-divider"></div>
+                      <div class="contact-modal-closer">
+                        <span class="ion-close"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <!-- scripts start -->
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wylex.js') }}"></script>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.932.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- scripts end -->
+  </body>
+</html>
