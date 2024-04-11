@@ -23,6 +23,6 @@ jobs:
                     password: ${{ secrets.DOCKERHUB_TOKEN }}
 
             -   name: push image to Docker Hub
-                run: docker push calebyeboah/vividarts:3.0
+                run: docker push calebyeboah/vividarts:4.0
             
 
