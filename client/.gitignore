@@ -8,4 +8,6 @@ image-resizer-lambda/node_modules
 function*
 terraform/*.tfstate*
 terraform/*.terraform*
+venv
+.gitignore
 
