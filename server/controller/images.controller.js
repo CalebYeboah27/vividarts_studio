@@ -68,7 +68,6 @@ const uploadImages = async (req, res) => {
 const deleteImage = async (req, res) => {
   try {
     const id = req.params.id;
-    console.log(id);
     const params = {
       Bucket: processedImageBucket,
       Key: id,
