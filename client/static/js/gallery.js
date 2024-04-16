@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.addEventListener("click", () => {
           // console.log("mouse click", img.alt);
           const Key = img.alt;
-          const delApiURL = `http://localhost:3000/api/v1/images/${Key}`
+          const delApiURL = `https://vividarts-api.onrender.com/api/v1/images${Key}`
           console.log(delApiURL);
           deleteImage(delApiURL, Key);
         });
