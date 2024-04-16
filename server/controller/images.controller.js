@@ -5,8 +5,7 @@ import {
   ListObjectsV2Command,
   GetObjectCommand,
 } from "@aws-sdk/client-s3";
-
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import crypto from "crypto";
 
 import {
   params,
@@ -15,6 +14,9 @@ import {
   processedImageBucket,
   getObjectURL,
 } from "../config/aws.js";
+
+const randomImageName = (bytes = 32) =>
+  crypto.randomBytes(bytes).toString("hex");
 
 const data = [];
 const getImages = async (req, res) => {
@@ -40,7 +42,45 @@ const getImages = async (req, res) => {
 
 const uploadImages = async (req, res) => {
   try {
-  } catch (error) {}
+    // Extract uploaded file information
+    const fileName = req.file.originalname;
+    const file = req.file.buffer;
+    console.log(fileName);
+
+    const params = {
+      Bucket: rawImagesBucket,
+      Key: `${randomImageName()} - ${req.file.originalname}`,
+      Body: req.file.buffer,
+      ContentType: req.file.mimetype,
+    };
+
+    const command = new PutObjectCommand(params);
+    await s3Client.send(command);
+
+    console.log(file, fileName);
+    res.status(201).json("image uploaded successfully...");
+  } catch (error) {
+    console.error("Error uploading file:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
 
-export { getImages };
+const deleteImage = async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log(id);
+    const params = {
+      Bucket: processedImageBucket,
+      Key: id,
+    };
+
+    const command = new DeleteObjectCommand(params);
+    await s3Client.send(command);
+    res.status(200).json({ msg: "image deleted successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "failed to delete image" });
+  }
+};
+
+export { getImages, uploadImages, deleteImage };

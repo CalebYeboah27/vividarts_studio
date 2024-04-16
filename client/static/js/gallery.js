@@ -13,21 +13,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const s3 = new AWS.S3();
 
-  const processedImageBucket = "processed-images-vividarts-cy";
   // Function to fetch images from api
   async function fetchImagesFromS3() {
     try {
       // Populate images in the gallery
 
-      const apiUrl = "https://vividarts-api.onrender.com/api/v1/images";
+      // const apiUrl = "https://vividarts-api.onrender.com/api/v1/images";
+      const apiUrl = "http://localhost:3000/api/v1/images";
       const { data } = await fetchData(apiUrl);
 
       data.forEach(({ Key, signedUrl }) => {
-        const alt = Key.split(".jpg")[0];
         const image = document.createElement("img");
+        // const alt = Key.split(".jpg")[0];
         image.src = signedUrl;
-        image.alt = alt;
+        image.alt = Key;
+        image.setAttribute("class", "image");
         gallery.appendChild(image);
+      });
+      const images = document.getElementsByTagName("img");
+      console.log(images);
+
+      Array.from(images).forEach((img) => {
+        img.addEventListener("mouseover", () => {
+          console.log("mouse over");
+          img.classList.add("image");
+          console.log(img);
+        });
+
+        img.addEventListener("click", () => {
+          // console.log("mouse click", img.alt);
+          const Key = img.alt;
+          const delApiURL = `http://localhost:3000/api/v1/images/${Key}`
+          console.log(delApiURL);
+          deleteImage(delApiURL, Key);
+        });
       });
 
       // s3.listObjectsV2({ Bucket: processedImageBucket }, (err, data) => {
