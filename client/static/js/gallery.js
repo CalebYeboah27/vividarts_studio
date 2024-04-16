@@ -11,15 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const s3 = new AWS.S3();
-
   // Function to fetch images from api
   async function fetchImagesFromS3() {
     try {
       // Populate images in the gallery
 
-      // const apiUrl = "https://vividarts-api.onrender.com/api/v1/images";
-      const apiUrl = "http://localhost:3000/api/v1/images";
+      const apiUrl = "https://vividarts-api.onrender.com/api/v1/images";
+      // const apiUrl = "http://localhost:3000/api/v1/images";
       const { data } = await fetchData(apiUrl);
 
       data.forEach(({ Key, signedUrl }) => {

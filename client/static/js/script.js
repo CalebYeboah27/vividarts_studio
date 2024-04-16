@@ -25,13 +25,12 @@ function uploadImage(e) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function (event) {
-
-      const apiUrl = "http://localhost:3000/api/v1/images";
+      // const apiUrl = "http://localhost:3000/api/v1/images";
+      const apiUrl = "https://vividarts-api.onrender.com/api/v1/images";
       imageUploadFunc(apiUrl, file)
         .then((responseData) => {
           // Handle response from server if needed
           console.log(responseData);
-
         })
         .catch((err) => {
           // Handle error
