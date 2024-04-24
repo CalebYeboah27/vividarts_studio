@@ -12,17 +12,23 @@ jobs:
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v2
+            
+            -   name: Build Docker image - server
+                run: docker image build -t calebyeboah/vividarts-api:1.0 server/
 
-            -   name: Buid Docker image
-                run: docker image build -t calebyeboah/vividarts:5.0 client/
-                       
+            -   name: Buid Docker image - client
+                run: docker image build -t calebyeboah/vividarts:6.0 client/
+               
             -   name: Login to Docker Hub
                 uses: docker/login-action@v3
                 with:
                     username: ${{ secrets.DOCKERHUB_USERNAME }}
                     password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-            -   name: push image to Docker Hub
-                run: docker push calebyeboah/vividarts:5.0
+            -   name: push server image to Docker Hub
+                run: docker push calebyeboah/vividarts-api:1.0
+
+            -   name: push client image to Docker Hub
+                run: docker push calebyeboah/vividarts:6.0
             
 

@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Populate images in the gallery
 
-      const apiUrl = "https://vividarts-api.onrender.com/api/v1/images";
-      // const apiUrl = "http://localhost:3000/api/v1/images";
+      // const apiUrl = "https://vividarts-api.onrender.com/api/v1/images";
+      const apiUrl = "http://localhost:3000/api/v1/images";
       const { data } = await fetchData(apiUrl);
 
       data.forEach(({ Key, signedUrl }) => {
